@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="contact" class="com.gdu.app01.xml02.Contact">
+		<property name="paxNo">
+			<value>02-123-412</value>
+		</property>
+		<property name="phoneNo">
+			<value>010-3543-2343</value>
+		</property>
+	</bean>
+	<bean id="address" class="com.gdu.app01.xml02.Address">
+		<property name="address">
+			<value>금천구 가산동 구디아카데미</value>
+		</property>
+		<property name="strAddress">
+			<value>가산디지털로 112길</value>
+		</property>
+		<property name="contact" >
+			<ref bean="contact"></ref>
+		</property>
+	</bean>
+
+	<!-- 가장 상위 클래스 -->
+	<bean id="academy" class="com.gdu.app01.xml02.Academy">
+		<property name="name" >
+			<value>구디 아카데미</value>
+		</property>
+		<property name="address" >
+			<ref bean="address"></ref>
+		</property>
+	</bean>
+
+</beans>
