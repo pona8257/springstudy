@@ -26,7 +26,7 @@
 		${org.slf4j-version}		   -> 1.7.30으로 사용된다.
 		
 		SpringFramework 버전을 2021년 01월 버전으로 정하고,
-		aspectj와 slf4j의 버전을 2021년 
+		aspectj와 slf4j의 버전을 2021년 01월 버전 또는 직전 버전으로 사용하였다.
 	-->
 	<properties>
 		<java-version>11</java-version>
@@ -36,25 +36,31 @@
 	</properties>
 	
 	
-	<!-- 
+	<!--
 		Maven 프로젝트
 		
-		mvnrepository.com의 중앙저장소(central)에 각종 jar를 저장해 둔다.
-		pom.xml 파일에 등록된 dependency에 의해서 필요한 jar 파일이 중앙저장소(central)에서 다운로드된다.
-	-->
-	<!-- 
-		pom.xml의 dependency를 수정하면 jar 파일이 다운로드 되므로 pom.xml 수정 후 기다려야 한다.
-		다운로드 된 jar 파일들은 C:/Users/계정이름/.m2 디렉터리에 저장된다.
-		jar 파일에 문제가 발생한 경우,
-			1) STS를 끈다.
-			2) C:/Users/계정이름/.m2 디렉터리를 지운다
-			3) USB메모리에 미리 백업한 C:/Users/게정명/.m2 디렉터리를 복사한다.
-			4) 다시 STS를 켠다.
-			5) 프로젝트 우클릭 - [Maven] - [Update Project]를 실행한다.
+		1. mvnrepository.com의 중앙저장소(central)에 각종 jar를 저장해 둔다.
+		2. pom.xml 파일에 등록된 dependency에 의해서 필요한 jar 파일이 중앙저장소(central)에서 다운로드된다.
+		3. pom.xml의 dependency를 수정하면 jar 파일이 다운로드 되므로 pom.xml 수정 후 기다려야 한다.
+		4. 다운로드 된 jar 파일들은 C:/Users/계정명/.m2 디렉터리에 저장된다.
+		5. jar 파일에 문제가 발생한 경우,
+		   1) STS를 끈다.
+		   2) C:/Users/계정명/.m2 디렉터리를 지운다.
+		   3) USB메모리에 미리 백업한 C:/Users/계정명/.m2 디렉터리를 복사한다.
+		   4) 다시 STS를 켠다.
+		   5) 프로젝트 우클릭 - [Maven] - [Update Project]를 실행한다.
 	-->
 	
 	
 	<dependencies>
+		
+		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 -->
+		<dependency>
+		    <groupId>com.oracle.database.jdbc</groupId>
+		    <artifactId>ojdbc8</artifactId>
+		    <version>21.1.0.0</version>
+		</dependency>
+	
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
