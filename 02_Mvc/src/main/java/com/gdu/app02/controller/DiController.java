@@ -1,9 +1,11 @@
-package com.gdu.app02.domain;
+package com.gdu.app02.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.gdu.app02.domain.Bbs;
 
 @Controller
 public class DiController {
