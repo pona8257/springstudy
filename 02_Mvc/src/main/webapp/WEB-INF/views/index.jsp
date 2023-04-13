@@ -54,6 +54,10 @@
 	<div><a href="${contextPath}/bbs/detail.do">상세보기</a></div>
 	
 	
+	<!-- DiController에서 확인 합시다 -->
+	<h1>Redirect</h1>
+	<div><a href="${contextPath}/post/detail.do?name=한재형&age=25">상세보기</a></div>
+	<div><a href="${contextPath}/post/detail.me?name=한재형&age=25">상세보기</a></div>
 	
 	
 	
