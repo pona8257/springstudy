@@ -9,9 +9,9 @@
 <head>
 <meta charset="UTF-8">
 <script src="${contextPath}/resources/js/lib/jquery-3.6.4.min.js"></script>
-<script src="${contextPath}/resources/summernote-0.8.18.dist/summernote-lite.min.js"></script>
-<script src="${contextPath}/resources/summernote-0.8.18.dist/lang/summernote-ko-KR.min.js"></script>
-<link rel="stylesheet" href="${contextPath}/resources/summernote-0.8.18.dist/summernote-lite.min.css">
+<script src="${contextPath}/resources/summernote-0.8.18-dist/summernote-lite.min.js"></script>
+<script src="${contextPath}/resources/summernote-0.8.18-dist/lang/summernote-ko-KR.min.js"></script>
+<link rel="stylesheet" href="${contextPath}/resources/summernote-0.8.18-dist/summernote-lite.min.css">
 <title>Insert title here</title>
 </head>
 <body>

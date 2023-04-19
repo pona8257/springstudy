@@ -3,7 +3,8 @@ package com.gdu.app04.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+
+import org.springframework.stereotype.Service;
 
 import com.gdu.app04.domain.BoardDTO;
 import com.gdu.app04.repository.BoardDAO;
@@ -25,7 +26,7 @@ import com.gdu.app04.repository.BoardDAO;
  	방법1. <context:component-scan> - servlet-content.xml에 이미 등록되어 있다
  	방법2. @ComponentScan
  */
-@Component
+@Service 
 public class BoardServiceImpl implements BoardService {
 
 	@Autowired
@@ -33,32 +34,31 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public List<BoardDTO> getBoardList() {
-		// TODO Auto-generated method stub
 		return boardDAO.selectBoardList();
 	}
 
 	@Override
 	public BoardDTO getBoardByNo(int board_no) {
 		// TODO Auto-generated method stub
-		return null;
+		return boardDAO.selectBoardByNo(board_no);
 	}
 
 	@Override
 	public int addBoard(BoardDTO board) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return boardDAO.insertBoard(board);
 	}
 
 	@Override
 	public int modifyBoard(BoardDTO board) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return boardDAO.updateBoard(board);
 	}
 
 	@Override
 	public int removeBoard(int board_no) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return boardDAO.deleteBoard(board_no);
 	}
 
 }
