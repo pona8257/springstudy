@@ -18,7 +18,7 @@ import org.springframework.transaction.interceptor.RuleBasedTransactionAttribute
 import org.springframework.transaction.interceptor.TransactionInterceptor;
 
 
-@EnableTransactionManagement	// 트랜잭션 처리를 허용한다.(DB Config
+@EnableTransactionManagement	// 트랜잭션 처리를 허용한다.(DBConfig에서 앞으로도 계속 사용할 애너테이션)
 @Configuration
 public class DBConfig {
 	
