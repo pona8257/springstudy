@@ -52,7 +52,7 @@
 
 	
 	<div>
-		<a href="${contextPath}/employees/seatch.form">사원 조회 화면으로 이동</a>	
+		<a href="${contextPath}/employees/search.page">사원 조회 화면으로 이동</a>	
 	</div>	
 	
 	<div>
