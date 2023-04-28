@@ -31,6 +31,15 @@
 				alert('게시글 삭제가 실패했습니다.');
 			}
 		}
+
+		// 답글 달기 결과 메시지
+		if('${addReplyResult}' != ''){
+			if('${addReplyResult}' == '1') {
+				alert('답글이 달렸습니다.');
+			} else {
+				alert('답글 달기가 실패했습니다.');
+			}
+		}
 		
 		// 삭제 버튼 이벤트
 		$('.frm_remove').on('submit', function(event){
@@ -40,9 +49,19 @@
 			}
 		})
 		
+		// 답글 작성 화면 
+		$('.btn_reply').on('click', function(){
+			$(this).parent().parent().next().toggleClass('blind');
+		})
+		
 	})
 
 </script>
+<style>
+	.blind {
+		display: none;
+	}
+</style>
 </head>
 <body>
 
@@ -71,13 +90,44 @@
 						<tr>
 							<td>${beginNo - vs.index}</td>
 							<td>${bbs.writer}</td>
-							<td>${bbs.title}</td>
+							<td>
+								<!-- DEPTH에 의한 들여쓰기 -->
+								<c:forEach begin="1" end="${bbs.depth}" step="1">&nbsp;&nbsp;&nbsp;</c:forEach>
+								<!-- 답글은 [RE] 표시하기 -->
+								<c:if test="${bbs.depth > 0}">[RE]</c:if>
+								<!-- 제목 -->
+								${bbs.title}
+								<!-- 답글 작성하기 버튼 -->
+								<input type="button" value="답글" class="btn_reply">
+							</td>
 							<td>${bbs.ip}</td>
 							<td>${bbs.createdAt}</td>
 							<td>
 								<form class="frm_remove" method="post" action="${contextPath}/bbs/remove.do">
 									<input type="hidden" name="bbsNo" value="${bbs.bbsNo}">
 									<button>삭제</button>
+								</form>
+							</td>
+						</tr>
+						<!-- 답글 작성 화면 -->
+						<tr class="blind">
+							<td colspan="6">
+								<form method="post" action="${contextPath}/bbs/reply/add.do">
+									<div>
+										<label for="writer">작성자</label>
+										<input id="writer" name="writer" required="required" >
+									</div>
+									<div>
+										<label for="title">제목</label>
+										<input id="title" name="title" required="required" >
+									</div>
+									<div>
+										<button>답글달기</button>
+										<!-- 원글의 depth, groupNo, groupOrder를 함께 보낸다 -->
+										<input type="hidden" name="depth" value="${bbs.depth + 1}">
+										<input type="hidden" name="groupNo" value="${bbs.groupNo}">
+										<input type="hidden" name="groupOrder" value="${bbs.groupOrder}">
+									</div>
 								</form>
 							</td>
 						</tr>

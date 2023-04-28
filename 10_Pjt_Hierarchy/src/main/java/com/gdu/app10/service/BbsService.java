@@ -9,4 +9,5 @@ public interface BbsService {	// 애는 컨트롤러가 호출함
 	public void loadBbsList(HttpServletRequest request, Model model);
 	public int addBbs(HttpServletRequest request);
 	public int removeBbs(int bbsNo);
+	public int addReply(HttpServletRequest request);
 }
