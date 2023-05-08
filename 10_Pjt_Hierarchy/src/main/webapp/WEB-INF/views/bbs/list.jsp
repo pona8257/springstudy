@@ -49,9 +49,20 @@
 			}
 		})
 		
-		// 답글 작성 화면 
+		// 답글 작성 화면 표시/숨기기
 		$('.btn_reply').on('click', function(){
-			$(this).parent().parent().next().toggleClass('blind');
+			// 작성화면
+			let write = $(this).closest('.list').next();  // write는 jQuery객체이다. (jQuery wrapper가 필요 없다.)
+			// 작성화면이 blind를 가지고 있다 = 다른 작성화면이 열려 있다
+			if(write.hasClass('blind')){
+				
+				$('.write').addClass('blind');  // 모든 작성화면을 닫자
+				write.removeClass('blind');     // 현재 작성화면을 열자
+			// 작성화면이 blind를 가지고 있지 않다 = 현재 작성화면이 열려 있다
+			} else {
+				write.addClass('blind');        // 현재 작성화면을 닫자
+			}
+			
 		})
 		
 	})
@@ -110,7 +121,7 @@
 							</td>
 						</tr>
 						<!-- 답글 작성 화면 -->
-						<tr class="blind">
+						<tr class="write blind">
 							<td colspan="6">
 								<form method="post" action="${contextPath}/bbs/reply/add.do">
 									<div>
