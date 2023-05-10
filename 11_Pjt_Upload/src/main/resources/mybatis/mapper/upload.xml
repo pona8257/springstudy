@@ -55,9 +55,17 @@
 		 WHERE ATTACH_NO = #{attachNo}
 	</select>
 	
+	<update id="increaseDownloadCount" parameterType="int">
+		UPDATE ATTACH
+		   SET DOWNLOAD_COUNT = DOWNLOAD_COUNT + 1
+		 WHERE ATTACH_NO = #{attachNo}
+	</update>
 	
-	
-	
+	<delete id="removeUpload" parameterType="int">
+			DELETE
+			  FROM UPLOAD
+			 WHERE UPLOAD_NO = #{uploadNo} 
+	</delete>
 	
 	
 	
