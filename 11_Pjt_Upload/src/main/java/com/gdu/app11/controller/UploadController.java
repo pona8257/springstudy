@@ -72,10 +72,9 @@ public class UploadController {
 	}
 	
 	@PostMapping("editUpload.do")
-	public String editUpload() {
-		//int editResult = uploadService.editUpload(multipartRequest);
-		//redirectAttributes.addFlashAttribute("uploadResult", uploadResult);
-		return "redirect:/upload/edit";
+	public String editUpload(@RequestParam("uploadNo") int uploadNo, Model model) {
+		uploadService.getUploadByNo(uploadNo, model);
+		return "upload/edit";
 	}
 	
 }

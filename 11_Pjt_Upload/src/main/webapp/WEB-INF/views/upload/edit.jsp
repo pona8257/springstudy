@@ -14,33 +14,32 @@
 <body>
 
 	<div>
-		<a href="${contextPath}/upload/write.do">게시글 작성하러 가기</a>
+		<h1>${upload.uploadNo}번 UPLOAD 게시글 수정하기</h1>
 	</div>
 	
 	<hr>
-	
 	<div>
-		<table border="1">
-			<thead>
-				<tr>
-					<td>UPLOAD게시글번호</td>
-					<td>제목</td>
-					<td>작성일자</td>
-					<td>첨부개수</td>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach items="${uploadList}" var="upload">
-					<tr>
-						<td>${upload.uploadNo}</td>
-						<td><a href="${contextPath}/upload/detail.do?uploadNo=${upload.uploadNo}">${upload.uploadTitle}</a></td>
-						<td>${upload.createdAt}</td>
-						<td>${upload.attachCount}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+		<form method="post" action="${contextPath}/upload/modiify.do">
+			<div>
+				<label for="title">제목</label>
+				<input type="text" id="title" name="title" value="${upload.uploadTitle}">
+			</div>
+			<div>
+				<div><label for="content">내용</label></div>
+				<textarea id="content" name="content">${upload.uploadContent}</textarea>
+			</div>
+			<div>
+				<label for="files">첨부</label>
+				<input type="file" id="files" name="files" multiple="multiple" onchange="fnFileCheck(this)">
+				<div id="fileList">첨부 파일의 목록이 이 곳에 표시됩니다</div>
+			</div>
+			<div>
+				<input type="hidden" name="uploadNo" value="${upload.uploadNo}">
+				<button>수정완료</button>
+			</div>		
+		</form>
 	</div>
+	
 	
 </body>
 </html>

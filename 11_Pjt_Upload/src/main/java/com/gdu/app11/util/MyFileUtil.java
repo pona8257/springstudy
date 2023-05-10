@@ -13,10 +13,10 @@ public class MyFileUtil {
 	
 	// 경로 구분자 
 	private String sep = Matcher.quoteReplacement(File.separator);
+	LocalDate now = LocalDate.now();
 	
 	// String path 만들기
 	public String getPath() {
-		LocalDate now = LocalDate.now();
 		
 		// 루트/storage/2023/05/08
 		return "/storage" + sep + now.getYear() + sep + String.format("%02d", now.getMonthValue()) + sep + String.format("%02d", now.getDayOfMonth());
@@ -54,5 +54,13 @@ public class MyFileUtil {
 	// String tempfileName 만들기 (zip 파일)
 	public String getTempfileName() {
 		return UUID.randomUUID().toString().replace("-", "") + "." + ".zip";
+	}
+	
+	// String yesterdayPath 만들기
+	public String getYesterdatPath() {
+		LocalDate date = LocalDate.now();
+		date.minusDays(1);
+		
+		return "/storage" + sep + now.getYear() + sep + String.format("%02d", now.getMonthValue()) + sep + String.format("%02d", now.getDayOfMonth());
 	}
 }

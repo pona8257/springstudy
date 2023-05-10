@@ -10,6 +10,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="${contextPath}/resources/js/lib/jquery-3.6.4.min.js"></script>
+<!-- post 방식으로 넘길때는 아래와 같은 방법으로 get일때는 location.href로 한다. -->
 <script>
 	var frm;
 	$(function(){
@@ -23,7 +24,8 @@
 		frm.submit();
 	}
 	function fnEditUpload(){
-		location.href = '${contextPath}/upload/editUpload.do';
+		frm.prop('action', '${contextPath}/upload/editUpload.do');
+		frm.submit();
 	}
 	
 </script>
