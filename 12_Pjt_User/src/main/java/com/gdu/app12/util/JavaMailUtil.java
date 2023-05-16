@@ -43,7 +43,7 @@ public class JavaMailUtil {
       
       Properties properties = new Properties();
       properties.put("mail.smtp.host", env.getProperty("spring.mail.host"));
-      properties.put("mail.smtp.port", env.getProperty("spring.mail.host"));
+      properties.put("mail.smtp.port", env.getProperty("spring.mail.port"));
       properties.put("mail.smtp.port", env.getProperty("spring.mail.properties.mail.smtp.auth"));
       properties.put("mail.smtp.starttls.enable", env.getProperty("spring.mail.properties.mail.smtp.starttls.enable"));
       

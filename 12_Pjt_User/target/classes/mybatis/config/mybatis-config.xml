@@ -13,6 +13,9 @@
 	<!-- typeAliases -->
 	<typeAliases>
 	  <typeAlias alias="UserDTO" type="com.gdu.app12.domain.UserDTO" /> 	<!-- 여기서 별명 지정해줌 -->
+	  <typeAlias alias="SleepUserDTO" type="com.gdu.app12.domain.SleepUserDTO" /> 	<!-- 여기서 별명 지정해줌 -->
+	  <typeAlias alias="LeaveUserDTO" type="com.gdu.app12.domain.LeaveUserDTO" /> 	<!-- 여기서 별명 지정해줌 -->
+	  <typeAlias alias="UserAccessDTO" type="com.gdu.app12.domain.UserAccessDTO" /> 	<!-- 여기서 별명 지정해줌 -->
 	</typeAliases>
 		
 </configuration>
