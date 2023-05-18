@@ -44,7 +44,7 @@ public class JavaMailUtil {
       Properties properties = new Properties();
       properties.put("mail.smtp.host", env.getProperty("spring.mail.host"));
       properties.put("mail.smtp.port", env.getProperty("spring.mail.port"));
-      properties.put("mail.smtp.port", env.getProperty("spring.mail.properties.mail.smtp.auth"));
+      properties.put("mail.smtp.auth", env.getProperty("spring.mail.properties.mail.smtp.auth"));
       properties.put("mail.smtp.starttls.enable", env.getProperty("spring.mail.properties.mail.smtp.starttls.enable"));
       
       // 이메일을 보내는 계정 정보를 javax.mail.Session에 저장한다
@@ -52,12 +52,12 @@ public class JavaMailUtil {
         @Override
         protected PasswordAuthentication getPasswordAuthentication() {
           
-          return new PasswordAuthentication(env.getProperty("spring.mail.user.username"), env.getProperty("spring.mail.password"));
+          return new PasswordAuthentication(env.getProperty("spring.mail.username"), env.getProperty("spring.mail.password"));
         }
       }));
       
       // 이메일 만들기
-      message.setFrom(new InternetAddress(env.getProperty("spring.mail.user.username"), "사이트관리자"));
+      message.setFrom(new InternetAddress(env.getProperty("spring.mail.username"), "사이트관리자"));
       message.setRecipient(Message.RecipientType.TO, new InternetAddress(to));
       message.setSubject(title);
       message.setContent(content, "text/html; charset=UTF-8");
