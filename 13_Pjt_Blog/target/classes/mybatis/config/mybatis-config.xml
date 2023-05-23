@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	
+	<!-- settings -->
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	
+	<!-- typeAliases -->
+	<typeAliases>
+	  <typeAlias alias="BlogDTO"             type="com.gdu.app13.domain.BlogDTO" /> 	<!-- 여기서 별명 지정해줌 -->
+	  <typeAlias alias="CommentDTO"          type="com.gdu.app13.domain.CommentDTO" /> 	<!-- 여기서 별명 지정해줌 -->
+	  <typeAlias alias="GoodDTO"             type="com.gdu.app13.domain.GoodDTO" /> 	<!-- 여기서 별명 지정해줌 -->
+	  <typeAlias alias="MemberDTO"           type="com.gdu.app13.domain.MemberDTO" /> 	<!-- 여기서 별명 지정해줌 -->
+	  <typeAlias alias="SummernoteImageDTO"  type="com.gdu.app13.domain.SummernoteImageDTO" /> 	<!-- 여기서 별명 지정해줌 -->
+	</typeAliases>
+		
+</configuration>
