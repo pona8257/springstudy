@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class BlogDTO {
-  private int blogNO;
-  private String titile;
+  private int blogNo;
+  private String title;
   private String content;
   private int hit;
   private Date createdAt;

@@ -10,4 +10,10 @@ public class MvcController {
 	public String index() {
 		return "index";
 	}
+	/*
+	@GetMapping("/header.do")
+	public String header() {
+	  return "layout/header";
+	}
+	*/
 }
